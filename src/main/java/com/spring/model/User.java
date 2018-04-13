@@ -20,6 +20,7 @@ public class User {
 	}
 
 	public void setName(String name) {
+		
 		this.name = name;
 	}
 
@@ -45,7 +46,16 @@ public class User {
 	}
 
 	
-	
+	public String processstring(String mobile)
+	{
+		String s1=mobile;
+		String s2,s3,s4;
+		s2=s1.substring(0,3);
+		s3=s1.substring(4);
+		s4=s2.concat(s3);
+		System.out.println(s4);
+		return s4;
+	}
 	
 	
 }

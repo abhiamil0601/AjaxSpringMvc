@@ -31,13 +31,15 @@ public class SpringAjaxController {
 	 @ResponseBody
 	 public String addUser(@ModelAttribute("user") User user,BindingResult result){
 	        String returnText;
+	        System.out.println(user.getMobile());
+	        user.processstring(user.getMobile());
 	        System.out.println(user);
 	        if(!result.hasErrors()){
 	            userList.add(user);
 	            System.out.println(userList);
-	            returnText = "User has been added to the list. Total number of users are " + userList.size();
+	            returnText = "Your Message is sent Successfully!! Total number of sent SMS are:" + userList.size();
 	        }else{
-	            returnText = "Sorry, an error has occur. User has not been added to list.";
+	            returnText = "Sorry, an error has occured Message has not been sent.";
 	        }
 	        System.out.println("End of Post Method!");
 	        return returnText;
